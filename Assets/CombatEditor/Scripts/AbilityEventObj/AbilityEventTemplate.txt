@@ -1,0 +1,52 @@
+using UnityEngine;
+//Replace the "FillInType" with the event you want to create
+//If you want to create a object with handle in preview, please inherit the "AbilityEventObj" with "AbilityEventObj_CreateObjWithHandle"
+
+namespace CombatEditor
+{
+[AbilityEvent]
+[CreateAssetMenu(menuName = "AbilityEvents / FillInType")]
+public class AbilityEventObj_FillInType: AbilityEventObj
+{
+    //Write the data you need here.
+    public override EventTimeType GetEventTimeType()
+    {
+        return FillInTimeType;
+    }
+    public override AbilityEventEffect Initialize()
+    {
+        return new AbilityEventEffect_FillInType(this);
+    }
+	#if UNITY_EDITOR
+	public override AbilityEventPreview InitializePreview()
+    {
+        return new AbilityEventPreview_FillInType(this);
+    }
+	#endif
+}
+//Write you logic here
+public partial class AbilityEventEffect_FillInType : AbilityEventEffect
+{
+   public override void StartEffect()
+    {
+        base.StartEffect();
+    }
+    public override void EffectRunning()
+    {
+        base.EffectRunning();
+    }
+    public override void EndEffect()
+    {
+        base.EndEffect();
+    }
+}
+
+public partial class AbilityEventEffect_FillInType : AbilityEventEffect
+{
+    AbilityEventObj_FillInType EventObj  => (AbilityEventObj_FillInType)_EventObj;
+    public AbilityEventEffect_FillInType(AbilityEventObj InitObj) : base(InitObj)
+    {
+        _EventObj = InitObj;
+    }
+}
+}

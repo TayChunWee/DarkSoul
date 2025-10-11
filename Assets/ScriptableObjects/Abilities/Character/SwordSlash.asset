@@ -1,0 +1,228 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8963672547702523252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e2dd982f5c43b48b940242e405acc4, type: 3}
+  m_Name: AnimSpeed
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  Speed: 0.3
+--- !u!114 &-6167026594206290029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 279f83897d727e240b60714f4e13fc05, type: 3}
+  m_Name: InstantiateObj
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  ObjData: {TargetObj: {fileID: 8998435292490868173, guid: 782015691a304de478c90008643a5a90, type: 3}, controlType: 0, Offset: {x: 0, y: 0.8716972, z: 1.0067666}, Rot: {x: 0, y: 0, z: 0, w: 1}, TargetNode: 6, FollowNode: 0, RotateByNode: 0}
+--- !u!114 &-3458326510481753596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8ebd595a1b8dd4482d98c41b6b0787, type: 3}
+  m_Name: State
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  DivideCount: 3
+  States:
+  - StartUp
+  - Active
+  - Recover
+  - Recover
+  - 
+--- !u!114 &-2877960286034547104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75df4da46dd09c44bb149336749072c8, type: 3}
+  m_Name: CreateHitBox
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  ObjData:
+    TargetObj: {fileID: 2557966978344939087, guid: cf086f7d0aab02340bc2140423f5fd3a, type: 3}
+    controlType: 0
+    Offset: {x: 0, y: 0.41595986, z: 0.8351674}
+    Rot: {x: 0, y: 0, z: 0, w: 1}
+    TargetNode: 0
+    FollowNode: 0
+    RotateByNode: 0
+  ColliderOffset: {x: 0, y: 0, z: 0.4117478}
+  ColliderSize: {x: 1, y: 1, z: 1.8234956}
+  Radius: 0
+  Height: 0
+--- !u!114 &-800825855670152373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2229d21ed65194bac74b8298b11290, type: 3}
+  m_Name: Particles
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  ObjData:
+    TargetObj: {fileID: 3660099842271258598, guid: dbd4235a8a3035043be66bf5663bc492, type: 3}
+    controlType: 0
+    Offset: {x: -0.000000055879354, y: 0.7955249, z: 0.66419965}
+    Rot: {x: 0, y: 0, z: 0, w: 1}
+    TargetNode: 0
+    FollowNode: 1
+    RotateByNode: 0
+  TimeType: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 757d9b080c65e9847b379b2a8a5ae8ab, type: 3}
+  m_Name: SwordSlash
+  m_EditorClassIdentifier: 
+  AbilityType: 0
+  Clip: {fileID: 1827226128182048838, guid: a0caf335b8e7af5429b52438a04af0ee, type: 3}
+  PreviewPercentageRange: {x: 0, y: 1}
+  loopCount: 0
+  events:
+  - EventTime: 0
+    EventRange: {x: 0, y: 1}
+    EventMultiRange:
+    - 0.328125
+    - 0.671875
+    - 0.75
+    - 0.796875
+    Previewable: 0
+    Obj: {fileID: -3458326510481753596}
+  - EventTime: 0
+    EventRange: {x: 0.15625, y: 0.1875}
+    EventMultiRange:
+    - 0.2
+    - 0.4
+    - 0.6
+    Previewable: 0
+    Obj: {fileID: 4183219579323281348}
+  - EventTime: 0.359375
+    EventRange: {x: 0, y: 1}
+    EventMultiRange:
+    - 0.2
+    - 0.4
+    - 0.6
+    Previewable: 0
+    Obj: {fileID: -800825855670152373}
+  - EventTime: 0
+    EventRange: {x: 0.5, y: 0.578125}
+    EventMultiRange:
+    - 0.2
+    - 0.4
+    - 0.6
+    Previewable: 0
+    Obj: {fileID: -8963672547702523252}
+  - EventTime: 0
+    EventRange: {x: 0.328125, y: 1}
+    EventMultiRange:
+    - 0.2
+    - 0.4
+    - 0.6
+    Previewable: 0
+    Obj: {fileID: -2877960286034547104}
+  - EventTime: 0
+    EventRange: {x: 0, y: 1}
+    EventMultiRange:
+    - 0.2
+    - 0.4
+    - 0.6
+    Previewable: 0
+    Obj: {fileID: 722997870885527216}
+  - EventTime: 0.3125
+    EventRange: {x: 0, y: 1}
+    EventMultiRange:
+    - 0.2
+    - 0.4
+    - 0.6
+    Previewable: 0
+    Obj: {fileID: 215826592456636485}
+--- !u!114 &215826592456636485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073a54f545724964c8ee238ce71cd583, type: 3}
+  m_Name: SFX
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  clips:
+  - {fileID: 8300000, guid: 573fdd0a27e24574095f194c1a149d3b, type: 3}
+  Volume: 1
+--- !u!114 &722997870885527216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e2dd982f5c43b48b940242e405acc4, type: 3}
+  m_Name: AnimSpeed
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  Speed: 1
+--- !u!114 &2220979676559379213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abdf51652dfc8cb4c955ebea96307451, type: 3}
+  m_Name: HelloWorld
+  m_EditorClassIdentifier: 
+  IsActive: 1
+--- !u!114 &4183219579323281348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e2dd982f5c43b48b940242e405acc4, type: 3}
+  m_Name: AnimSpeed
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  Speed: 0.2
