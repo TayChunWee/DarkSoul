@@ -1,0 +1,179 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5771316784335443896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75df4da46dd09c44bb149336749072c8, type: 3}
+  m_Name: CreateHitBox
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  HitBoxTransformData:
+    TargetObj: {fileID: 0}
+    controlType: 0
+    Offset: {x: 0, y: 0, z: 0}
+    Rot: {x: 0, y: 0, z: 0, w: 0}
+    TargetNode: 0
+    FollowNode: 1
+    RotateByNode: 0
+  ColliderOffset: {x: 0, y: 0, z: 0}
+  controlType: 0
+  Rot: {x: 0, y: 0, z: 0, w: 0}
+  ColliderSize: {x: 1, y: 1, z: 1}
+  Radius: 0
+  Height: 0
+  TargetNodeType: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 757d9b080c65e9847b379b2a8a5ae8ab, type: 3}
+  m_Name: AttackTemplate
+  m_EditorClassIdentifier: 
+  AbilityType: 0
+  Clip: {fileID: 7400000, guid: e229c7e5abb4fde4abe1ccbab143c82b, type: 3}
+  PreviewPercentageRange: {x: 0, y: 1}
+  loopCount: 0
+  events:
+  - EventTime: 0
+    EventRange: {x: 0, y: 1}
+    Previewable: 0
+    Obj: {fileID: -5771316784335443896}
+  - EventTime: 0
+    EventRange: {x: 0, y: 0.10714286}
+    Previewable: 0
+    Obj: {fileID: 1861949551321209037}
+  - EventTime: 0
+    EventRange: {x: 0, y: 1}
+    Previewable: 0
+    Obj: {fileID: 4016714498771141826}
+  - EventTime: 0.25
+    EventRange: {x: 0, y: 1}
+    Previewable: 0
+    Obj: {fileID: 2331003255046438035}
+  - EventTime: 0.21428572
+    EventRange: {x: 0, y: 1}
+    Previewable: 0
+    Obj: {fileID: 409668245289023257}
+  - EventTime: 0
+    EventRange: {x: 0.071428575, y: 0.2857143}
+    Previewable: 0
+    Obj: {fileID: 1845844456996160640}
+--- !u!114 &409668245289023257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073a54f545724964c8ee238ce71cd583, type: 3}
+  m_Name: SFX
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  clips:
+  - {fileID: 8300000, guid: 315525fe3fd47424baa960b229c0251c, type: 3}
+  Volume: 1
+--- !u!114 &1845844456996160640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d163af58d060a2499564fdd02fa4d6f, type: 3}
+  m_Name: Motion
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  target:
+    Offset: {x: 0, y: 0, z: 2}
+  MotionTime: 0.10000001
+  MotionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1861949551321209037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e2dd982f5c43b48b940242e405acc4, type: 3}
+  m_Name: AnimSpeed
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  Speed: 1
+--- !u!114 &2331003255046438035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2229d21ed65194bac74b8298b11290, type: 3}
+  m_Name: Particles
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  ParticleData:
+    TargetObj: {fileID: 100503976000056606, guid: 7a1e55c4dd84d1c4898d4db5f53bf8b4, type: 3}
+    controlType: 0
+    Offset: {x: 0, y: 0, z: 0}
+    Rot: {x: 0, y: 0, z: 0, w: 0}
+    TargetNode: 0
+    FollowNode: 1
+    RotateByNode: 0
+--- !u!114 &4016714498771141826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 970e9a7c079ac5f46af0b64339331568, type: 3}
+  m_Name: RootMotion
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  Multiplier: 1
+  RootMotionX: 1
+  RootMotionY: 1
+  RootMotionZ: 1

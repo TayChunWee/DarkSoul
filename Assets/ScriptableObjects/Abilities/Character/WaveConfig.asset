@@ -1,0 +1,274 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8960649491793295871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad4708e4f1f5624fb019c6a909902a3, type: 3}
+  m_Name: Light
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  ObjData:
+    TargetObj: {fileID: 1395193201179402848, guid: 616a04f7c32f5a345a587adc2c145900, type: 3}
+    controlType: 0
+    Offset: {x: 0, y: 0, z: 0}
+    Rot: {x: 0, y: 0, z: 0, w: 1}
+    TargetNode: 6
+    FollowNode: 1
+    RotateByNode: 0
+  curve:
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 15.789474
+        outSlope: 15.789474
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.06333333
+        value: 1
+        inSlope: 7.894737
+        outSlope: 0
+        tangentMode: 65
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9266667
+        value: 1
+        inSlope: -0
+        outSlope: -1.2495391
+        tangentMode: 5
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.84090924
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -13.636366
+        outSlope: -13.636366
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    StartValue: 5
+    EndValue: 5
+--- !u!114 &-6303068489818548767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8ebd595a1b8dd4482d98c41b6b0787, type: 3}
+  m_Name: States
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  DivideCount: 3
+  States:
+  - StartUp
+  - Active
+  - Recover
+  - 
+  - 
+--- !u!114 &-4098461533534095981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e2dd982f5c43b48b940242e405acc4, type: 3}
+  m_Name: AnimSpeed
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  Speed: 0.2
+--- !u!114 &-371422586559914138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2229d21ed65194bac74b8298b11290, type: 3}
+  m_Name: Particles
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  ObjData:
+    TargetObj: {fileID: 1855484101560681795, guid: 512a88336a4a9194ba0cc237558f153d, type: 3}
+    controlType: 0
+    Offset: {x: 0.0039115557, y: -0.0012951234, z: -0.00016650795}
+    Rot: {x: 0, y: 0, z: 0, w: 1}
+    TargetNode: 6
+    FollowNode: 1
+    RotateByNode: 0
+  TimeType: 2
+--- !u!114 &-225020618565235474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e2dd982f5c43b48b940242e405acc4, type: 3}
+  m_Name: AnimSpeed
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  Speed: 0.35
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 757d9b080c65e9847b379b2a8a5ae8ab, type: 3}
+  m_Name: WaveConfig
+  m_EditorClassIdentifier: 
+  AbilityType: 0
+  Clip: {fileID: 1827226128182048838, guid: cc2c179625c2f254ca12414ed4e38fd6, type: 3}
+  PreviewPercentageRange: {x: 0, y: 1}
+  loopCount: 0
+  events:
+  - EventTime: 0
+    EventRange: {x: 0, y: 1}
+    EventMultiRange:
+    - 0.296875
+    - 0.7890625
+    - 0.6
+    - 0.8
+    Previewable: 0
+    Obj: {fileID: -6303068489818548767}
+  - EventTime: 0
+    EventRange: {x: 0.15625, y: 0.2578125}
+    EventMultiRange:
+    - 0
+    - 0
+    - 0
+    Previewable: 0
+    Obj: {fileID: -4098461533534095981}
+  - EventTime: 0.328125
+    EventRange: {x: 0.296875, y: 0.796875}
+    EventMultiRange:
+    - 0
+    - 0
+    - 0
+    Previewable: 0
+    Obj: {fileID: -371422586559914138}
+  - EventTime: 0
+    EventRange: {x: 0.296875, y: 0.796875}
+    EventMultiRange:
+    - 0
+    - 0
+    - 0
+    Previewable: 0
+    Obj: {fileID: -8960649491793295871}
+  - EventTime: 0.25
+    EventRange: {x: 0, y: 1}
+    EventMultiRange:
+    - 0
+    - 0
+    - 0
+    Previewable: 0
+    Obj: {fileID: 5742058729517074198}
+  - EventTime: 0.171875
+    EventRange: {x: 0.109375, y: 0.265625}
+    EventMultiRange:
+    - 0
+    - 0
+    - 0
+    Previewable: 0
+    Obj: {fileID: 6255693608122593550}
+  - EventTime: 0.0859375
+    EventRange: {x: 0, y: 1}
+    EventMultiRange:
+    - 0
+    - 0
+    - 0
+    Previewable: 0
+    Obj: {fileID: 3452270851663901160}
+  - EventTime: 0
+    EventRange: {x: 0.3046875, y: 0.796875}
+    EventMultiRange:
+    - 0
+    - 0
+    - 0
+    Previewable: 0
+    Obj: {fileID: -225020618565235474}
+--- !u!114 &3452270851663901160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073a54f545724964c8ee238ce71cd583, type: 3}
+  m_Name: SFX
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  clips:
+  - {fileID: 8300000, guid: b9fe9efc3df62d044bbfe98c7c356f13, type: 3}
+  Volume: 1
+--- !u!114 &5742058729517074198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073a54f545724964c8ee238ce71cd583, type: 3}
+  m_Name: SFX
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  clips:
+  - {fileID: 8300000, guid: 5c2f0661a6528124c8adcbc4bb1205bb, type: 3}
+  Volume: 1
+--- !u!114 &6255693608122593550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2229d21ed65194bac74b8298b11290, type: 3}
+  m_Name: Particles
+  m_EditorClassIdentifier: 
+  IsActive: 1
+  ObjData:
+    TargetObj: {fileID: 883157226942159327, guid: 110741d359df02c49a9f607b20126175, type: 3}
+    controlType: 0
+    Offset: {x: 0, y: 0, z: 0}
+    Rot: {x: 0, y: 0, z: 0, w: 1}
+    TargetNode: 6
+    FollowNode: 1
+    RotateByNode: 0
+  TimeType: 2
