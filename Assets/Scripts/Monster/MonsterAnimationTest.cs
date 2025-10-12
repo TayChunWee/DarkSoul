@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterAnimation : MonoBehaviour
+public class MonsterAnimationTest : MonoBehaviour
 {
     private Animator _animator = null;
 
