@@ -7,8 +7,8 @@ namespace DamageArea
     [System.Serializable]
     public class DamageAreaData
     {
-        public float damage;
-        public float size;
+        public float Damage;
+        public float Size;
         public float SpawnTime;
         public float GaugeTime;
         public float DeleteTime;

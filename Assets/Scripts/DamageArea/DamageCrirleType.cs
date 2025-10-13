@@ -6,7 +6,6 @@ using UnityEngine;
 public class DamageCrirleType : DamageBase
 {
     [SerializeField] private float _AreaAngle;
-    [SerializeField] private Collider _Collider;
 
     private void Start()
     {
@@ -26,9 +25,9 @@ public class DamageCrirleType : DamageBase
         {
             Vector3 posDelta = other.transform.position - transform.position; // Šp“x‚Å”»•Ê‚·‚éŒvZ®‚ªƒ_ƒ
             float targetAngle = Vector3.Angle(transform.forward, posDelta);
-            if (targetAngle < _AreaAngle)
+            if (targetAngle < _AreaAngle / 2)
             {
-                Debug.Log("damage " + _data.damage);
+                Debug.Log("damage " + _data.Damage);
             }
         }
     }

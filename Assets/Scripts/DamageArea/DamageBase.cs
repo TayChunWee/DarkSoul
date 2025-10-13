@@ -4,7 +4,12 @@ namespace DamageArea
 {
     public class DamageBase : MonoBehaviour
     {
-        public void SetData(DamageAreaData data) { _data = data; }
+        [SerializeField] protected Collider _Collider;
         protected DamageAreaData _data;
+        public void SetData(DamageAreaData data)
+        {
+            _data = data;
+            if (_data.Damage == 0) this.enabled = false;
+        }
     }
 }

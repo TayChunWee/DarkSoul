@@ -11,7 +11,7 @@ namespace DamageArea
         {
             Vector3 liftOffset = new Vector3(0, 0.01f, 0);
             GameObject area = Instantiate(prefab, transform.position + liftOffset, transform.rotation);
-            area.transform.localScale = Vector3.one * Data.size;
+            area.transform.localScale = Vector3.one * Data.Size;
 
             area.GetComponent<Motion>()?.SetData(Data);
             area.GetComponent<DamageBase>()?.SetData(Data);

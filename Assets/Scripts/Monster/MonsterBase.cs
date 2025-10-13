@@ -6,5 +6,4 @@ public class MonsterBase : MonoBehaviour
 {
     [SerializeField] protected int MaxHP;
     protected int HP;
-    
 }

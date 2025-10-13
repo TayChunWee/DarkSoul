@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using DamageArea;
+using Unity.VisualScripting;
 
 namespace Monster
 {
-    public class SpiderKingMove : MonoBehaviour
+    public class SpiderKingMove : MonsterBase
     {
         [SerializeField] private Animator _animator;
 
@@ -26,12 +28,11 @@ namespace Monster
 
         private void BiteAttack()
         {
-            float size = 10f;
             DamageAreaData Data = new DamageAreaData();
-            Data.damage = 10f;
-            Data.size = size;
+            Data.Damage = 0;
+            Data.Size = 10;
             Data.SpawnTime = 0.5f;
-            Data.GaugeTime = 3;
+            Data.GaugeTime = 3f;
             Data.DeleteTime = 0.3f;
             areaSpaner.Spawn60(transform, Data);
 

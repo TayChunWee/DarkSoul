@@ -4,7 +4,7 @@ namespace DamageArea
 {
     public class Motion : MonoBehaviour
     {
-        [Header("Model")]
+        [Header("Object")]
         [SerializeField] private GameObject _frame_obj;
         [SerializeField] private Material _frame_mt;
         [SerializeField] private GameObject _gauge_obj;
