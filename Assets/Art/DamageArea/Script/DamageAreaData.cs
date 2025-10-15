@@ -11,6 +11,14 @@ namespace DamageArea
         public float Size;
         public float SpawnTime;
         public float GaugeTime;
+        public float AttackTime;
         public float DeleteTime;
+    }
+
+    [System.Serializable]
+    public enum GaugeType
+    { 
+        Normal,
+        Width
     }
 }

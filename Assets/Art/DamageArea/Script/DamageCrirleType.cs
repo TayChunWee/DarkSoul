@@ -23,7 +23,7 @@ public class DamageCrirleType : DamageBase
     {
         if (other.tag == "Player")
         {
-            Vector3 posDelta = other.transform.position - transform.position; // Šp“x‚Å”»•Ê‚·‚éŒvZ®‚ªƒ_ƒ
+            Vector3 posDelta = other.transform.position - transform.position;
             float targetAngle = Vector3.Angle(transform.forward, posDelta);
             if (targetAngle < _AreaAngle / 2)
             {

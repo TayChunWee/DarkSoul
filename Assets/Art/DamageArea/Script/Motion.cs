@@ -4,6 +4,7 @@ namespace DamageArea
 {
     public class Motion : MonoBehaviour
     {
+        [SerializeField] private GaugeType _gaugeType;
         [Header("Object")]
         [SerializeField] private GameObject _frame_obj;
         [SerializeField] private Material _frame_mt;
@@ -12,10 +13,11 @@ namespace DamageArea
 
         // Time
         public void SetData(DamageAreaData timeData) { _timeData = timeData; }
-        [SerializeField] private DamageAreaData _timeData;
+        private DamageAreaData _timeData;
         private float _timer = 0;
 
-        enum phase { spawn, gauge, delete }
+        // Motion Phase
+        enum phase { spawn, gauge, attack, delete }
         private phase _currentPhase = (int)phase.spawn;
 
         private void Start()
@@ -32,7 +34,7 @@ namespace DamageArea
                     SizeUpPerTime(_frame_obj, _timeData.SpawnTime);
                     if (_timer > _timeData.SpawnTime)
                     {
-                        _currentPhase = phase.gauge;
+                        ++_currentPhase;
                         _timer = 0;
                     }
                     break;
@@ -40,8 +42,14 @@ namespace DamageArea
                     SizeUpPerTime(_gauge_obj, _timeData.GaugeTime);
                     if (_timer > _timeData.GaugeTime)
                     {
-                        _currentPhase = phase.delete;
+                        ++_currentPhase;
                         _timer = 0;
+                    }
+                    break;
+                case phase.attack:
+                    if(_timer > _timeData.AttackTime)
+                    {
+                        ++_currentPhase;
                     }
                     break;
                 case phase.delete:
@@ -59,7 +67,15 @@ namespace DamageArea
         private void SizeUpPerTime(GameObject obj, float time)
         {
             float scale = _timer / time;
-            obj.transform.localScale = new Vector3(scale, scale, scale);
+            switch (_gaugeType)
+            {
+                case GaugeType.Normal:
+                    obj.transform.localScale = new Vector3(scale, scale, scale);
+                    break;
+                case GaugeType.Width:
+                    obj.transform.localScale = new Vector3(scale, 1, 1);
+                    break;
+            }
         }
 
         private void FadeIn(Material mt)

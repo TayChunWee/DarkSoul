@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 90b81c8d5b06e8249b3f5b5db448e9fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.476
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 90b81c8d5b06e8249b3f5b5db448e9fe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -103,8 +103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ce0745975260a49b54c61c42c99650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AreaAngle: 360
   _Collider: {fileID: 6654700798914903049}
+  _AreaAngle: 360
 --- !u!114 &6532746983697876379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,16 +117,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93117834cf31e6c47a50dac47fc0acff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gaugeType: 0
   _frame_obj: {fileID: 256770390097208454}
   _frame_mt: {fileID: 2100000, guid: f4dd867bdd6555b4881acd5d4bdfb61b, type: 2}
   _gauge_obj: {fileID: 7786917233090763426}
   _gauge_mt: {fileID: 2100000, guid: 2c9504b0213143645b653616ce337f21, type: 2}
-  _timeData:
-    damage: 0
-    size: 0
-    SpawnTime: 1
-    GaugeTime: 3
-    DeleteTime: 0.3
 --- !u!136 &6654700798914903049
 CapsuleCollider:
   m_ObjectHideFlags: 0
