@@ -7,14 +7,15 @@ namespace Monster
 {
     public class SpiderKingMove : MonsterBase
     {
-        [SerializeField] private Animator _animator;
+        private Animator _animator;
         private Rigidbody _rb;
 
-        DamageArea.Spaner areaSpaner;
+        DamageArea.DASpaner areaSpaner;
 
         private void Start()
         {
-            areaSpaner = GetComponent<Spaner>();
+            _animator = GetComponent<Animator>();
+            areaSpaner = GetComponent<DASpaner>();
             _rb = GetComponent<Rigidbody>();
         }
 
@@ -30,7 +31,7 @@ namespace Monster
             }
             if (Input.GetKeyDown(KeyCode.Z))
             {
-                Rotate(60);
+                Rotate(170);
             }
         }
 
@@ -69,12 +70,12 @@ namespace Monster
             areaSpaner.SpawnRect(longth, Data);
 
             float delayTime = Data.SpawnTime + Data.GaugeTime;
+            float advanceStopTime = 0.4f;
             StartCoroutine(DelayCoroutine(delayTime, () =>
             {
                 // Animation
                 _animator.SetTrigger("AttackTrigger");
                 _animator.SetBool("isRushAttack", true);
-                float advanceStopTime = 0.4f;
                 StartCoroutine(DelayCoroutine(Data.AttackTime - advanceStopTime, () =>
                 {
                     _animator.SetBool("isRushAttack", false);
@@ -94,14 +95,15 @@ namespace Monster
 
         private void Rotate(float angle)
         {
-            float rotateTime = 1.2f;
+            float rotateTime = 1f;
+            float advanceStopTime = 0.5f;
             Vector3 rotateSpeed = new Vector3(0, angle / rotateTime, 0);
             _animator.SetBool("isRotate", true);
             StartCoroutine(RunForSeconds(rotateTime, () =>
             {
                 transform.Rotate(rotateSpeed * Time.deltaTime);
             }));
-            StartCoroutine(DelayCoroutine(rotateTime, () =>
+            StartCoroutine(DelayCoroutine(rotateTime - advanceStopTime, () =>
             {
                 _animator.SetBool("isRotate", false);
             }));

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace DamageArea
 {
-    public class Motion : MonoBehaviour
+    public class DAMotion : MonoBehaviour
     {
         [SerializeField] private GaugeType _gaugeType;
         [Header("Object")]
@@ -16,7 +16,7 @@ namespace DamageArea
         private DamageAreaData _timeData;
         private float _timer = 0;
 
-        // Motion Phase
+        // DAMotion Phase
         enum phase { spawn, gauge, attack, delete }
         private phase _currentPhase = (int)phase.spawn;
 

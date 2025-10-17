@@ -107,8 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ce0745975260a49b54c61c42c99650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _AreaAngle: 60
   _Collider: {fileID: 2578895032555153417}
+  _AreaAngle: 60
 --- !u!114 &6457847606475966514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,19 +118,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6214072035559241943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93117834cf31e6c47a50dac47fc0acff, type: 3}
+  m_Script: {fileID: 11500000, guid: dfc5d4b820af81a47b434605924d40c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gaugeType: 0
   _frame_obj: {fileID: 7837809957020434458}
   _frame_mt: {fileID: 2100000, guid: 6556294672f742b49aa85276be3b69f9, type: 2}
   _gauge_obj: {fileID: 235851950314372670}
   _gauge_mt: {fileID: 2100000, guid: 1188edcfe99e48a4b8a6ea221555d973, type: 2}
-  _timeData:
-    damage: 0
-    size: 0
-    SpawnTime: 1
-    GaugeTime: 3
-    DeleteTime: 0.3
 --- !u!136 &2578895032555153417
 CapsuleCollider:
   m_ObjectHideFlags: 0

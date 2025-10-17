@@ -140,12 +140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 0
-  _animator: {fileID: 266482427}
---- !u!95 &266482427 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9220383817024442575, guid: 888a2743e21511340ab5e6007fadd92d, type: 3}
-  m_PrefabInstance: {fileID: 2030488000}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &266482431
 MonoBehaviour:
   m_ObjectHideFlags: 0

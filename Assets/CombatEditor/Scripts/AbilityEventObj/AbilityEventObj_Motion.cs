@@ -13,7 +13,7 @@ using UnityEngine;
 	}
 	
 	[AbilityEvent]
-	[CreateAssetMenu(menuName = "AbilityEvents / Motion")]
+	[CreateAssetMenu(menuName = "AbilityEvents / DAMotion")]
 	public class AbilityEventObj_Motion : AbilityEventObj
 	{
 	    public MotionTarget target;
