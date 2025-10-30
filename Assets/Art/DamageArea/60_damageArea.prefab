@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Collider: {fileID: 2578895032555153417}
-  _AreaAngle: 60
+  _attackAreaAngle: 60
 --- !u!114 &6457847606475966514
 MonoBehaviour:
   m_ObjectHideFlags: 0

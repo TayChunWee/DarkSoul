@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace DamageArea
 {
-    public class DASpaner : MonoBehaviour
+    public class DamageAreaSpaner : MonoBehaviour
     {
         [Header("Circle Type")]
         [SerializeField] private GameObject _C_60;
@@ -19,8 +19,8 @@ namespace DamageArea
             GameObject area = Instantiate(prefab, transform.position + liftOffset, transform.rotation);
             area.transform.localScale = Vector3.one * Data.Size;
 
-            area.GetComponent<DAMotion>()?.SetData(Data);
-            area.GetComponent<DamageBase>()?.SetData(Data);
+            area.GetComponent<DamageAreaMotion>()?.SetData(Data);
+            area.GetComponent<AttackBase>()?.SetData(Data);
         }
 
         public void Spawn(GameObject prefab, Vector3 addPos, DamageAreaData Data)
@@ -29,8 +29,8 @@ namespace DamageArea
             GameObject area = Instantiate(prefab, transform.position + addPos + liftOffset, transform.rotation);
             area.transform.localScale = Vector3.one * Data.Size;
 
-            area.GetComponent<DAMotion>()?.SetData(Data);
-            area.GetComponent<DamageBase>()?.SetData(Data);
+            area.GetComponent<DamageAreaMotion>()?.SetData(Data);
+            area.GetComponent<AttackBase>()?.SetData(Data);
         }
 
         #endregion

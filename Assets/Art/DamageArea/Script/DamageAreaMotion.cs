@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace DamageArea
 {
-    public class DAMotion : MonoBehaviour
+    public class DamageAreaMotion : MonoBehaviour
     {
         [SerializeField] private GaugeType _gaugeType;
         [Header("Object")]

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace DamageArea
 {
-    public class DamageBase : MonoBehaviour
+    public class AttackBase : MonoBehaviour
     {
         [SerializeField] protected Collider _Collider;
         protected DamageAreaData _data;

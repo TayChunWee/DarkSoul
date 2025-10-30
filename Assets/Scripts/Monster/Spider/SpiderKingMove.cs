@@ -9,29 +9,40 @@ namespace Monster
     {
         private Animator _animator;
         private Rigidbody _rb;
+        DamageArea.DamageAreaSpaner areaSpaner;
 
-        DamageArea.DASpaner areaSpaner;
+        [SerializeField] private int _randomSeed;
+        private ReproducibleRandom _random;
 
         private void Start()
         {
             _animator = GetComponent<Animator>();
-            areaSpaner = GetComponent<DASpaner>();
             _rb = GetComponent<Rigidbody>();
+            areaSpaner = GetComponent<DamageAreaSpaner>();
+
+            _random = new ReproducibleRandom(_randomSeed);
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 BiteAttack();
             }
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 RushAttack();
             }
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                Rotate(170);
+                // óêêî1ÇÃéüÇÃíléÊìæ
+                var rand1Value = _random.Range(0, 1000);
+
+                Debug.Log($"óêêî1ÇÃíl : {rand1Value}");
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Rotate(10);
             }
         }
 
@@ -55,7 +66,7 @@ namespace Monster
             }));
         }
 
-        private void RushAttack()   // à⁄ìÆÇÃë¨ìxÇ™ñ]Ç‹ÇµÇ≠Ç»Ç¢
+        private void RushAttack()
         {
             // Attack Data & DamageArea spawn
             int longth = 5;
@@ -91,6 +102,17 @@ namespace Monster
                     _rb.velocity = Vector3.zero;
                 }));
             }));
+        }
+
+        private void CreatePoisonArea()
+        {
+            Vector2 myPos = this.transform.position;
+
+        }
+
+        private void SpawnChild()
+        {
+
         }
 
         private void Rotate(float angle)

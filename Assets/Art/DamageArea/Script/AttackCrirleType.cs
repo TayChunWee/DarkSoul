@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageCrirleType : DamageBase
+public class AttackCrirleType : AttackBase
 {
-    [SerializeField] private float _AreaAngle;
+    [SerializeField] private float _attackAreaAngle;
 
     private void Start()
     {
@@ -23,11 +23,15 @@ public class DamageCrirleType : DamageBase
     {
         if (other.tag == "Player")
         {
+            Debug.Log("Hit!");
             Vector3 posDelta = other.transform.position - transform.position;
             float targetAngle = Vector3.Angle(transform.forward, posDelta);
-            if (targetAngle < _AreaAngle / 2)
+            Debug.Log("targetAngle " + targetAngle);
+            if (targetAngle < _attackAreaAngle / 2)
             {
-                Debug.Log("damage " + _data.Damage);
+                Debug.Log("Call TakeDamage");
+                IDamageable damageable = other.GetComponent<IDamageable>();
+                if (damageable != null) damageable.TakeDamage(_data.Damage);
             }
         }
     }

@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class MonsterBase : MonoBehaviour
 {
-    [SerializeField] protected int MaxHP;
-    protected int HP;
+    [SerializeField] protected int _maxHP;
+    protected int _currentHP;
 }
