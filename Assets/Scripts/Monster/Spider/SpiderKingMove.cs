@@ -2,23 +2,34 @@ using System;
 using System.Collections;
 using UnityEngine;
 using DamageArea;
+using System.Collections.Generic;
+using static UnityEditor.PlayerSettings;
 
 namespace Monster
 {
     public class SpiderKingMove : MonsterBase
     {
-        private Animator _animator;
         private Rigidbody _rb;
-        DamageArea.DamageAreaSpaner areaSpaner;
+        private Animator _animator;
+        DamageArea.DamageAreaSpaner _areaSpaner;
+        MonsterSummoner _monsterSummoner;
 
-        [SerializeField] private int _randomSeed;
+        private int _randomSeed = 3627;
         private ReproducibleRandom _random;
+
+        [Header("AttackPrefab")]
+        [SerializeField] private GameObject _poisonArea;
+
+        [Header("SummonData")]
+        [SerializeField] private MonsterSummonData _spider;
+        [SerializeField] private MonsterSummonData _toxinSpider;
 
         private void Start()
         {
-            _animator = GetComponent<Animator>();
             _rb = GetComponent<Rigidbody>();
-            areaSpaner = GetComponent<DamageAreaSpaner>();
+            _animator = GetComponent<Animator>();
+            _areaSpaner = GetComponent<DamageAreaSpaner>();
+            _monsterSummoner = GetComponent<MonsterSummoner>();
 
             _random = new ReproducibleRandom(_randomSeed);
         }
@@ -35,10 +46,11 @@ namespace Monster
             }
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                // 乱数1の次の値取得
-                var rand1Value = _random.Range(0, 1000);
-
-                Debug.Log($"乱数1の値 : {rand1Value}");
+                CreatePoisonArea();
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                SpawnChild();
             }
             if (Input.GetKeyDown(KeyCode.R))
             {
@@ -55,7 +67,7 @@ namespace Monster
             Data.SpawnTime = 0.5f;
             Data.GaugeTime = 3f;
             Data.DeleteTime = 0.3f;
-            areaSpaner.Spawn60(Data);
+            _areaSpaner.Spawn120(Data);
 
             // animation
             float delayTime = Data.SpawnTime + Data.GaugeTime;
@@ -78,7 +90,7 @@ namespace Monster
             Data.GaugeTime = 1f;
             Data.AttackTime = 1.3f;
             Data.DeleteTime = 0.3f;
-            areaSpaner.SpawnRect(longth, Data);
+            _areaSpaner.SpawnRect(longth, Data);
 
             float delayTime = Data.SpawnTime + Data.GaugeTime;
             float advanceStopTime = 0.4f;
@@ -106,13 +118,63 @@ namespace Monster
 
         private void CreatePoisonArea()
         {
-            Vector2 myPos = this.transform.position;
+            // 値を設定
+            DamageAreaData Data = new DamageAreaData();
+            Data.Damage = 0;
+            Data.Size = 10;
+            Data.SpawnTime = 0.3f;
+            Data.GaugeTime = 1.5f;
+            Data.DeleteTime = 0.3f;
 
+            // Player位置取得
+            GameObject pManager = GameObject.Find("PlayerManager");
+            PlayerPosFinder pPosFinder = pManager.GetComponent<PlayerPosFinder>();
+            List<Vector3> posList = pPosFinder.GetPlayerPosList();
+
+            // Delay時間の設定
+            int pCount = posList.Count;
+            float delayTime = 2 * ( Data.SpawnTime + Data.GaugeTime + Data.DeleteTime);
+
+            int counter = 0;
+            StartCoroutine(RepeatWithDelayCountType(delayTime, pCount, () =>
+            {
+                Vector3 spawnPos = posList[counter];
+                spawnPos.y = 0.01f;
+
+                _areaSpaner.Spawn360(spawnPos, Data);
+                float delayTime1 = Data.SpawnTime + Data.GaugeTime;
+                StartCoroutine(DelayCoroutine(delayTime1, () =>
+                {
+                    _animator.SetTrigger("AttackTrigger");
+                    _animator.SetInteger("AttackType", 2);
+
+                }));
+                float delayTime2 = Data.SpawnTime + Data.GaugeTime + Data.DeleteTime;
+                StartCoroutine(DelayCoroutine(delayTime2, () =>
+                {
+                    Quaternion poisonAreaRot = Quaternion.Euler(-90, 0, 0);
+                    Instantiate(_poisonArea, spawnPos, poisonAreaRot);
+                }));
+
+                ++counter;
+            }));
         }
 
         private void SpawnChild()
         {
+            _animator.SetTrigger("AttackTrigger");
+            _animator.SetInteger("AttackType", 1);
 
+            // 子モンスターの生成
+            MonsterSummoner Summoner = GetComponent<MonsterSummoner>();
+            _spider.SummonPos = transform.position + transform.forward * 5f;
+            GameObject child = Summoner.Summon(_spider);
+
+            SpiderChild spiderChild = child.GetComponent<SpiderChild>();
+            StartCoroutine(DelayCoroutine(_spider.SummonTime, () =>
+            {
+                spiderChild.Init();
+            }));
         }
 
         private void Rotate(float angle)
@@ -149,6 +211,17 @@ namespace Monster
         {
             yield return new WaitForSeconds(seconds);
             action?.Invoke();
+        }
+
+        private IEnumerator RepeatWithDelayCountType(float delayTime, int repeatCount, Action action)
+        {
+            int count = 0;
+            while (count < repeatCount)
+            {
+                action?.Invoke();
+                yield return new WaitForSeconds(delayTime);
+                ++count;
+            }
         }
     }
 }

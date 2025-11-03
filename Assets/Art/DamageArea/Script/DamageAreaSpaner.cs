@@ -6,6 +6,7 @@ namespace DamageArea
     {
         [Header("Circle Type")]
         [SerializeField] private GameObject _C_60;
+        [SerializeField] private GameObject _C_120;
         [SerializeField] private GameObject _C_360;
         [Header("Rect Type")]
         [SerializeField] private GameObject _R_Center;
@@ -23,10 +24,10 @@ namespace DamageArea
             area.GetComponent<AttackBase>()?.SetData(Data);
         }
 
-        public void Spawn(GameObject prefab, Vector3 addPos, DamageAreaData Data)
+        public void Spawn(GameObject prefab, Vector3 Pos, DamageAreaData Data)
         {
             Vector3 liftOffset = new Vector3(0, 0.01f, 0);
-            GameObject area = Instantiate(prefab, transform.position + addPos + liftOffset, transform.rotation);
+            GameObject area = Instantiate(prefab, Pos + liftOffset, transform.rotation);
             area.transform.localScale = Vector3.one * Data.Size;
 
             area.GetComponent<DamageAreaMotion>()?.SetData(Data);
@@ -39,6 +40,9 @@ namespace DamageArea
 
         public void Spawn60(DamageAreaData Data)
             => Spawn(_C_60, Data);
+
+        public void Spawn120(DamageAreaData Data)
+            => Spawn(_C_120, Data);
 
         public void Spawn360(Vector3 addPos, DamageAreaData Data)
             => Spawn(_C_360, addPos, Data);

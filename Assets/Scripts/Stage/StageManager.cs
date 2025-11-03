@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stage : MonoBehaviour
+public class StageManager : MonoBehaviour
 {
     [SerializeField] private float _stageSize;
-    [SerializeField] private GameObject _boseMonster;
-    void Start()
+
+    public float GetStageSize()
     {
-        
+        return _stageSize;
     }
 }

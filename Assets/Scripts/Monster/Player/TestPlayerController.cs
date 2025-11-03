@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TestPlayerController : MonoBehaviour, IDamageable
 {
-    [SerializeField] private int maxHP = 100;
+    [SerializeField] private int maxHp = 100;
     [SerializeField] private int currentHP;
 
     public float moveSpeed = 5f;      // 前進・後退の速度
@@ -18,7 +18,7 @@ public class TestPlayerController : MonoBehaviour, IDamageable
     {
         rb = GetComponent<Rigidbody>();
 
-        currentHP = maxHP;
+        currentHP = maxHp;
     }
 
     void Update()
@@ -54,5 +54,10 @@ public class TestPlayerController : MonoBehaviour, IDamageable
     public void Die()
     {
         Debug.Log("死んだ～");
+    }
+
+    public int GetMaxHp()
+    {
+        return maxHp;
     }
 }

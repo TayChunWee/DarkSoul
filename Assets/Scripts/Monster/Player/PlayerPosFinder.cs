@@ -9,11 +9,24 @@ public class PlayerPosFinder : MonoBehaviour
     private void Start()
     {
         SetPlayer();
+    }
 
+    /// <summary>
+    /// 全てのプレイヤの座標を取得
+    /// </summary>
+    /// <returns>List<Vector3></returns>
+    public List<Vector3> GetPlayerPosList()
+    {
+        if(_playerList == null || _playerList.Count == 0) return null;
+
+        List<Vector3> posList = new List<Vector3>();
         foreach (Transform t in _playerList)
         {
-            Debug.Log(t.name);
+            if(t == null) continue;
+            posList.Add(t.position);
         }
+
+        return posList;
     }
 
     /// <summary>
